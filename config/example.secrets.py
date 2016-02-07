@@ -1,0 +1,2 @@
+SECRET_KEY = ''
+MTA_KEY = ''

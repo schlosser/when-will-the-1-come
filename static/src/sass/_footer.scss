@@ -1,0 +1,27 @@
+footer {
+  background-color: rgba($black, 0.8);
+  bottom: 0;
+  font-size: 0.75rem;
+  height: 1rem;
+  left: 0;
+  line-height: 0.75rem;
+  padding: 0.5rem 1rem;
+  position: fixed;
+  right: 0;
+  text-align: center;
+
+  img {
+    height: 1.5rem;
+    margin: -0.25rem 0 -.5rem;
+    padding: 0 0.75rem;
+  }
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+@media screen and (max-width: $phone-landscape-max) {
+  position: relative;
+}

@@ -1,0 +1,22 @@
+// Font weights
+$extra-bold: 800;
+$bold: 700;
+$medium: 500;
+$regular: 400;
+$light: 300;
+
+$sans: Helvetica, Arial, sans-serif;
+
+body, html, h1, h2, h3, h4, h5, h6, p, li, input {
+  font-family: $sans;
+}
+
+h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 12rem;
+  font-weight: 700;
+}

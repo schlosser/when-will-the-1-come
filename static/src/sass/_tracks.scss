@@ -1,0 +1,59 @@
+.tracks {
+  @include clearfix;
+  height: 100%;
+  width: 100%;
+}
+
+.track {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  display: inline-block;
+  float:left;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  width: 50%;
+
+  &.uptown {
+    background-image: url('../img/uptown.jpg');
+  }
+
+  &.downtown {
+    background-image: url('../img/downtown.jpg');
+  }
+}
+
+.estimate {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &:after {
+    content: 'min';
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    padding-left: 1rem;
+    font-size: 2rem;
+  }
+}
+
+.scrim {
+  background-color: rgba($black, 0.3);
+  box-sizing: border-box;
+  height: 100%;
+  padding: 6rem 1rem 3rem;
+  width: 100%;
+}
+
+@media screen and (max-width: $phone-landscape-max) {
+  .track {
+    display: block;
+    width: 100%;
+  }
+}
