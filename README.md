@@ -1,7 +1,7 @@
-# Spire
-Inpsire others.
+# When will the 1 come?
+The only data that matters:  How far is the 1 train from Columbia?
 
-Spire is built with [Flask][flask], [Flask-SQLAlchemy][flask-sqlalchemy], [Gulp][gulp], and [SCSS][scss].
+When will the 1 come is built with [Flask][flask], [Gulp][gulp], and [SCSS][scss].
 
 ## Installation
 
