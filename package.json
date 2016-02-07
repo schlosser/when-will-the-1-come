@@ -1,23 +1,26 @@
 {
   "name": "WhenWillThe1Come",
+  "license": "MIT",
   "version": "0.0.1",
-  "description": "Keep it simple, find out when the 1 will come.",
+  "description": "Find out when the 1 train will arrive at Columbia University.",
   "scripts": {},
-  "dependencies": {},
-  "devDependencies": {
-    "browser-sync": "^2.8.2",
+  "dependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-cached": "^1.1.0",
-    "gulp-jscs": "^2.0.0",
-    "gulp-jshint": "^1.11.2",
+    "gulp-imagemin": "^2.4.0",
     "gulp-minify-css": "^1.2.1",
-    "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
-    "gulp-scss-lint": "^0.3.0",
-    "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.3.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.8.2",
+    "gulp-jscs": "^2.0.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-plumber": "^1.0.1",
+    "gulp-scss-lint": "^0.3.0",
+    "gulp-sourcemaps": "^1.5.2"
   },
   "engines": {
     "node": "0.10.36",
@@ -25,6 +28,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/danrschlosser/how-ducked-is-the-subway.git"
+    "url": "git://github.com/danrschlosser/when-will-the-1-come.git"
   }
 }

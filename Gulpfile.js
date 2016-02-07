@@ -5,6 +5,7 @@ var browserSync = require('browser-sync').create();
 var cache = require('gulp-cached');
 var fs = require('fs');
 var gulp = require('gulp');
+var imagemin = require('gulp-imagemin');
 var jscs = require('gulp-jscs');
 var jshint = require('gulp-jshint');
 var plumber = require('gulp-plumber');
@@ -46,7 +47,6 @@ gulp.task('sass:optimized', function() {
     .pipe(rename({
       suffix: '.min',
     }))
-    .pipe(plumber())
     .pipe(sass({
       outputStyle: 'compressed',
     }))
@@ -69,6 +69,12 @@ gulp.task('js:build', function() {
     }));
 });
 
+gulp.task('js:optimized', function() {
+  gulp.src(['./static/src/js/**/*.js'])
+    .pipe(uglify())
+    .pipe(gulp.dest('./static/dist/js'));
+});
+
 gulp.task('js:lint', function() {
   gulp.src(['./static/src/js/**/*.js', '!./static/src/js/lib/*', 'Gulpfile.js'])
     .pipe(plumber())
@@ -88,13 +94,10 @@ gulp.task('images', function() {
     }));
 });
 
-gulp.task('fonts', function() {
-  gulp.src('./static/src/font/*')
-    .pipe(plumber())
-    .pipe(gulp.dest('./static/dist/font'))
-    .pipe(reload({
-      stream: true,
-    }));
+gulp.task('images:optimized', function() {
+  gulp.src('./static/src/img/**/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('./static/dist/img'))
 });
 
 gulp.task('run', function() {
@@ -110,8 +113,8 @@ gulp.task('watch', function() {
   gulp.watch(['./static/src/js/**/*.js', 'Gulpfile.js'], ['js']);
 });
 
-gulp.task('build', ['sass', 'images', 'fonts', 'js']);
-gulp.task('build:optimized', ['sass:optimized', 'images', 'fonts', 'js']);
+gulp.task('build', ['sass', 'images', 'js']);
+gulp.task('build:optimized', ['sass:optimized', 'images:optimized', 'js:optimized']);
 
 gulp.task('serve', ['run', 'build'], function() {
 

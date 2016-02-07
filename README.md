@@ -1,4 +1,4 @@
-# When will the 1 come?
+# [When will the 1 come?](http://whenwillthe1come.schlosser.io/)
 The only data that matters:  How far is the 1 train from Columbia?
 
 When will the 1 come is built with [Flask][flask], [Gulp][gulp], and [SCSS][scss].
