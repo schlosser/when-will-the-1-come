@@ -101,7 +101,7 @@ gulp.task('images:optimized', function() {
 });
 
 gulp.task('run', function() {
-  spawn('./config/runserver.sh', [], {
+  spawn('./config/runserver.sh', ['debug'], {
     stdio: 'inherit',
   });
 });

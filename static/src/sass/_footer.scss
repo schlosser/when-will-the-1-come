@@ -23,5 +23,31 @@ footer {
 }
 
 @media screen and (max-width: $phone-landscape-max) {
-  position: relative;
+  footer {
+    bottom: auto;
+    left: auto;
+    right: auto;
+    position: relative;
+    height: auto;
+    padding: 2rem 0;
+
+    a {
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-1rem);
+
+      &:first-of-type {
+        left: 1rem;
+      }
+
+      &:nth-of-type(2) {
+        right: 1rem;
+      }
+    }
+  }
 }

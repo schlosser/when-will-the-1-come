@@ -6,6 +6,7 @@ try:
     SECRET_KEY = secrets.SECRET_KEY
     MTA_KEY = secrets.MTA_KEY
     DEBUG = (len(argv) == 2 and argv[1] == 'debug')
+    STDOUT = (len(argv) == 2 and argv[1] == 'stdout')
     META_TITLE = 'When will the 1 come?'
     META_DESCRIPTION = (
         'When will the 1 train arrive at Columbia?'

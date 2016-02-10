@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
       var responseData = JSON.parse(response.responseText);
 
       if (responseData.status === 'success') {
-        uptownEstimate.innerText = responseData.data.uptown;
-        downtownEstimate.innerText = responseData.data.downtown;
+        uptownEstimate.innerText = responseData.data.estimates.uptown;
+        downtownEstimate.innerText = responseData.data.estimates.downtown;
       }
 
       console.log('Updated:', responseData.data)
 
-      setTimeout(pollServer, 3000);
+      setTimeout(pollServer, 1500);
     });
   }
 

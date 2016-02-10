@@ -1,7 +1,48 @@
-# [When will the 1 come?](http://whenwillthe1come.schlosser.io/)
+# When will the 1 come?
+#### _Live: [http://whenwillthe1come.schlosser.io/](http://whenwillthe1come.schlosser.io/)_
+
 The only data that matters:  How far is the 1 train from Columbia?
 
-When will the 1 come is built with [Flask][flask], [Gulp][gulp], and [SCSS][scss].
+When will the 1 come? is built with [Flask][flask], [Gulp][gulp], and [SCSS][scss].
+
+## Data
+
+Example data:
+
+```javascript
+{
+  "entity": [
+    {
+      "id": "000027", 
+      "trip_update": {
+        "stop_time_update": [
+          {
+            "arrival": {
+              "time": "Wed, 10 Feb 2016 17:58:14 GMT"
+            }, 
+            "departure": {
+              "time": "Wed, 10 Feb 2016 17:58:14 GMT"
+            }, 
+            "stop_id": "116N"
+          }
+        ], 
+        "trip": {
+          "route_id": "1", 
+          "start_date": "20160210", 
+          "trip_id": "103900_1..N02R"
+        }
+      }
+    },
+    /*  ... */
+  ], 
+  "header": {
+    "gtfs_realtime_version": "1.0", 
+    "timestamp": 1455144994
+  }
+}
+```
+
+Each of the elements in the `entity` array are trip updates for the 1 train.  The `stop_time_update` indicates the expected arrival / departure times for the 1 train at the 116th & Broadway subway stop.  I use this data to predict arrival times.  Data is used with permission from the [MTA Open Data site](http://datamine.mta.info/).
 
 ## Installation
 
@@ -29,13 +70,17 @@ When will the 1 come is built with [Flask][flask], [Gulp][gulp], and [SCSS][scss
 6. Install requirements
 
     ```bash
-    cd spire/
+    cd when-will-the-1-come/
     npm install
     gem install sass scss_lint
     pip install virtualenv
     ```
 
 7. Setup secrets file
+    
+    **If you have a `secrets.py` file**: Simply place that file in the `config` folder. 
+
+    **Otherwise** run
 
     ```bash
     cp config/example.secrets.py config/secrets.py
@@ -43,15 +88,19 @@ When will the 1 come is built with [Flask][flask], [Gulp][gulp], and [SCSS][scss
 
     Then, edit `config/secrets.py` to contain the appropriate secret keys.
 
-8. Setup the SQLAlchemy database
-
-    ```bash
-    python manage.py
-    ```
-
 [nodejs]: https://nodejs.org/
 
-## Development
+## Running
+
+### Printing to stdout
+
+Type this command to print new data to the command line, without running the server.
+
+```bash
+./config/runserver.sh stdout
+```
+
+### Web Server
 
 With one Gulp command, you can start the Flask server, and reload SCSS, JS, HTML, images, and fonts with Browserify:
 
